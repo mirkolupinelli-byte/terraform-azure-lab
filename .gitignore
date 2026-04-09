@@ -1,7 +1,9 @@
 .terraform/
+**/.terraform/
 *.tfstate
 *.tfstate.*
 terraform.tfvars
-crash.log
+**/terraform.tfvars
 terraform.exe
 .terraform.lock.hcl
+**/.terraform.lock.hcl
