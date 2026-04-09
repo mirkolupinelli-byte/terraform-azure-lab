@@ -117,8 +117,11 @@ resource "azurerm_linux_virtual_machine" "vm_frontend" {
     azurerm_network_interface.nic_frontend.id
   ]
 
-  admin_password = var.admin_password
-  disable_password_authentication = false
+  disable_password_authentication = true
+  admin_ssh_key {
+  username   = "azureuser"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC3K6GL0jp0XYUPIRZULR/6cHPn2HjMPuUVI8A6FoK0E1dC/HvwEiHqyw1J+osjs2MIrgUq29Anc7fnjHLmIOcDNwjAU1M2uqxfCH/ZYLuh615M3AT62DIgKY6ABVkK3yi41huAbetKcVsJHYEEwp/nAg+AWmJOOIjjaznYnUeChC5KKaig+10Y9JH9jjJ2UTHqQUIBUpOMNsgUqaC+AZmYX4omIYgjo7ZlHePMkiDfarmpXZnby1+MWG8D9qQmCcW+YODGB0+MVOeVvNAYSQKPGYAJTjfbPpwvaen7KSkWsZI9BXS7EIv7v+/3nN+y09yRreUbrR+9q4TVxmULxwARnU8C3LjvrXgLKScQPXASWvFZWiyVWYhgP5OqpiMvnxLhxg4apT1olAcLfXU6Gq4tiKVQwfbeh/WkNfIkgzi3bafoX70XOlKtMfqJqPeXQcctFkxWQRwvkOVOCTCsslpr65YpL7++4waFV0jaLG1OZ9VX5sBzKbj7afSpoeGkWmOdtgjrBsLEpYD+y0eCL8UbhKCE4Bh6li4/x+f9DHGNlyHN3JdCNsUWD10iPha4na/mwHp9qP2lNzykDqAlmc6bWoadFKCV/reEyBaoyHpe0ch39kGX7fcFVYy+5ROKNr+jn/NaqDTlQnZfZ9P6HO5JsuED8nBQiv1QcxJgcpRsWQ== mirko@Mirko"
+}
 
   os_disk {
     caching              = "ReadWrite"
@@ -144,8 +147,11 @@ resource "azurerm_linux_virtual_machine" "vm_backend" {
     azurerm_network_interface.nic_backend.id
   ]
 
-  admin_password = var.admin_password
-  disable_password_authentication = false
+  disable_password_authentication = true
+  admin_ssh_key {
+  username   = "azureuser"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC3K6GL0jp0XYUPIRZULR/6cHPn2HjMPuUVI8A6FoK0E1dC/HvwEiHqyw1J+osjs2MIrgUq29Anc7fnjHLmIOcDNwjAU1M2uqxfCH/ZYLuh615M3AT62DIgKY6ABVkK3yi41huAbetKcVsJHYEEwp/nAg+AWmJOOIjjaznYnUeChC5KKaig+10Y9JH9jjJ2UTHqQUIBUpOMNsgUqaC+AZmYX4omIYgjo7ZlHePMkiDfarmpXZnby1+MWG8D9qQmCcW+YODGB0+MVOeVvNAYSQKPGYAJTjfbPpwvaen7KSkWsZI9BXS7EIv7v+/3nN+y09yRreUbrR+9q4TVxmULxwARnU8C3LjvrXgLKScQPXASWvFZWiyVWYhgP5OqpiMvnxLhxg4apT1olAcLfXU6Gq4tiKVQwfbeh/WkNfIkgzi3bafoX70XOlKtMfqJqPeXQcctFkxWQRwvkOVOCTCsslpr65YpL7++4waFV0jaLG1OZ9VX5sBzKbj7afSpoeGkWmOdtgjrBsLEpYD+y0eCL8UbhKCE4Bh6li4/x+f9DHGNlyHN3JdCNsUWD10iPha4na/mwHp9qP2lNzykDqAlmc6bWoadFKCV/reEyBaoyHpe0ch39kGX7fcFVYy+5ROKNr+jn/NaqDTlQnZfZ9P6HO5JsuED8nBQiv1QcxJgcpRsWQ== mirko@Mirko"
+}
 
   os_disk {
     caching              = "ReadWrite"
